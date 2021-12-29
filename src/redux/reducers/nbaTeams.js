@@ -1,4 +1,5 @@
-import { FETCH_NBA_PLAYERS } from '../actionTypes'
+import { FETCH_NBA_TEAMS } from '../actionTypes'
+
 import { normalizer } from '../../utils/normalizer'
 
 const initialState = {
@@ -6,16 +7,15 @@ const initialState = {
   ids: []
 }
 
-const nbaPlayers = (state = initialState, action) => {
+const nbaTeams = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_NBA_PLAYERS: {
+    case FETCH_NBA_TEAMS: {
       return { ...state, ...normalizer(action.payload) }
     }
-
     default: {
       return state
     }
   }
 }
 
-export default nbaPlayers
+export default nbaTeams
